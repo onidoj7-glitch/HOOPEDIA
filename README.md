@@ -60,9 +60,8 @@ Hoopedia/
 
 Visit the website here:
 
-**[Hoopedia — The Basketball Knowledge Library](YOUR-GITHUB-PAGES-LINK)**
+**[Hoopedia — The Basketball Knowledge Library](onidoj7-glitch.github.io/HOOPEDIA/)**
 
-Replace `YOUR-GITHUB-PAGES-LINK` with your actual GitHub Pages URL.
 
 ## 🎯 Project Goal
 
