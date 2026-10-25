@@ -5,14 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A guide to basketball rules, scoring, fouls, and violations.">
   <title>Basketball Rules — Hoopedia</title>
-  <link rel="stylesheet" href="asset/css/style.css">
-  <script src="asset/js/script.js" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button>
     <div class="brand"><a class="site-name" href="index.html">Hoopedia</a><p class="tagline">The Basketball Knowledge Library</p></div>
+    <div class="header-search">
+      <form class="search-form" role="search" action="index.html" method="get">
+        <label class="visually-hidden" for="site-search">Search Hoopedia articles</label>
+        <input id="site-search" name="q" type="search" placeholder="Search articles" autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+      <div class="search-results" id="search-results" aria-live="polite" hidden></div>
+    </div>
   </header>
   <div class="page-layout">
     <nav class="sidebar" id="site-navigation" aria-label="Main navigation">
