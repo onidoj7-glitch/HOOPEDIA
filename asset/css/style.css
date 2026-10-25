@@ -58,12 +58,111 @@ button:focus-visible {
 }
 
 .site-header {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 1.25rem;
   min-height: 100px;
   padding: 1rem max(1.5rem, calc((100vw - 1200px) / 2));
   border-bottom: 1px solid var(--light-green);
+}
+
+.header-search {
+  position: relative;
+  width: min(100%, 380px);
+  margin-left: auto;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.search-form input {
+  min-width: 0;
+  flex: 1;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--light-green);
+  border-radius: 0;
+  background: var(--page-background);
+  color: var(--main-text);
+  font: inherit;
+}
+
+.search-form button {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--link-green);
+  background: var(--link-green);
+  color: var(--page-background);
+  font: inherit;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background: var(--main-text);
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  z-index: 3;
+  width: 100%;
+  max-height: min(60vh, 420px);
+  overflow-y: auto;
+  border: 1px solid var(--light-green);
+  background: var(--page-background);
+}
+
+.search-results[hidden] {
+  display: none;
+}
+
+.search-results p {
+  margin: 0;
+  padding: 0.75rem;
+  color: var(--secondary-text);
+}
+
+.search-results ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.search-results li + li {
+  border-top: 1px solid var(--light-green);
+}
+
+.search-results a {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  text-decoration: none;
+}
+
+.search-results a:hover,
+.search-results a:focus-visible {
+  background: var(--soft-green);
+}
+
+.search-results a strong,
+.search-results a span {
+  display: block;
+}
+
+.search-results a span {
+  color: var(--secondary-text);
+  font-size: 0.9rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
 }
 
 .brand {
@@ -273,8 +372,16 @@ tbody th {
 
 @media (max-width: 700px) {
   .site-header {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.65rem 0.8rem;
     min-height: 84px;
     padding: 0.8rem 1rem;
+  }
+
+  .header-search {
+    grid-column: 1 / -1;
+    width: 100%;
   }
 
   .menu-toggle {
